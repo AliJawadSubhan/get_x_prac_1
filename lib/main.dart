@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:get_x_prac/home_screen.dart';
 import 'package:get/get.dart';
+import 'package:get_x_prac/responsive/responseive_example.dart';
 import 'package:get_x_prac/screens/first.dart';
 import 'package:get_x_prac/screens/second.dart';
 
@@ -19,21 +20,21 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
-      home: HomeScreen(),
-      getPages: [
-        GetPage(
-          name: '/',
-          page: () => HomeScreen(),
-        ),
-        GetPage(
-          name: '/first',
-          page: () => First(),
-        ),
-        GetPage(
-          name: '/second',
-          page: () => Second(),
-        ),
-      ],
+      home: ResponsiveWidget(),
+      // getPages: [
+      //   GetPage(
+      //     name: '/',
+      //     page: () => HomeScreen(),
+      //   ),
+      //   GetPage(
+      //     name: '/first',
+      //     page: () => First(),
+      //   ),
+      //   GetPage(
+      //     name: '/second',
+      //     page: () => Second(),
+      //   ),
+      // ],
     );
   }
 }
