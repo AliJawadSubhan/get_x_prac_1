@@ -4,15 +4,13 @@ import 'dart:developer';
 
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:get_x_prac/screens/first.dart';
 
-class HomeScreen extends StatefulWidget {
-  const HomeScreen({super.key});
+class HomeScreen extends StatelessWidget {
+  const HomeScreen({
+    super.key,
+  });
 
-  @override
-  State<HomeScreen> createState() => _HomeScreenState();
-}
-
-class _HomeScreenState extends State<HomeScreen> {
   @override
   Widget build(BuildContext context) {
     log('build method built');
@@ -93,16 +91,34 @@ class _HomeScreenState extends State<HomeScreen> {
                             ],
                           ),
                         ),
+                        SizedBox(
+                          height: 120,
+                          child: ListView(
+                            children: [
+                              TextButton(
+                                  onPressed: () {
+                                    Get.changeTheme(ThemeData.light());
+                                  },
+                                  child: Text('Light Theme')),
+                              TextButton(
+                                  onPressed: () {
+                                    Get.changeTheme(ThemeData.dark());
+                                  },
+                                  child: Text('Dark Theme')),
+                            ],
+                          ),
+                        ),
                         TextButton(
-                            onPressed: () {
-                              Get.changeTheme(ThemeData.light());
-                            },
-                            child: Text('Light Theme')),
-                        TextButton(
-                            onPressed: () {
-                              Get.changeTheme(ThemeData.dark());
-                            },
-                            child: Text('Dark Theme')),
+                          onPressed: () {
+                            // Get.to(() => First(
+                            //       name: 'Ali jawads',
+                            //     ));
+                            Get.toNamed('/first', arguments: [
+                              {'name': 'Ali Jawad Subhan'}
+                            ]);
+                          },
+                          child: Text('go forward'),
+                        ),
                         Container(
                           padding:
                               EdgeInsets.symmetric(horizontal: 16, vertical: 8),
